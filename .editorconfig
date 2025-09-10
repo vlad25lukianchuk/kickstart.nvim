@@ -1,0 +1,16 @@
+# top-most editor config file
+root = true
+
+# indentation settings for this project
+[*]
+indent_style = space
+indent_size = 2
+
+# maximum line length
+[*]
+max_line_length = 160
+
+# misc options
+[*]
+trim_trailing_whitespace = true
+insert_final_newline = true
