@@ -7,5 +7,5 @@
 -- my projects, but should be configured more flexible, according to the
 -- project or specific filetype).
 return {
-  { 'lukas-reineke/virt-column.nvim', opts = { virtcolumn = '80' } },
+  { 'lukas-reineke/virt-column.nvim', opts = { virtcolumn = '+1' } },
 }
