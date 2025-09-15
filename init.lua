@@ -630,7 +630,8 @@ require('lazy').setup({
       })
 
       -- Remap clangd switch between sourcesn and headers to smaller command
-      vim.api.nvim_create_user_command('Cssh', 'ClangdSwitchSourceHeader', {})
+      vim.api.nvim_create_user_command('Cssh', 'LspClangdSwitchSourceHeader', {})
+      vim.api.nvim_create_user_command('Cssi', 'LspClangdShowSymbolInfo', {})
 
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
