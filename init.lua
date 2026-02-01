@@ -684,6 +684,8 @@ require('lazy').setup({
         cmake = {
           buildDirectory = { 'build', 'cmake-build-*' },
         },
+        ruby_lsp = {},
+        rubocop = {},
         -- qmlls = {},
         -- gopls = {},
         -- rust_analyzer = {},
@@ -755,6 +757,8 @@ require('lazy').setup({
         'cmake',
         'yapf',
         'clang-format',
+        'ruby_lsp',
+        'rubocop',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -795,7 +799,7 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = false, cpp = false }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
@@ -810,6 +814,7 @@ require('lazy').setup({
         python = { 'yapf' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
+        --
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -918,10 +923,7 @@ require('lazy').setup({
     },
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
+  {
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
